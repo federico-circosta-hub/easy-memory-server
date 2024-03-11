@@ -26,7 +26,7 @@ app.use(express.json());
 app.use("/api", noteRouter);
 
 const corsOrigin = {
-  origin: "http://localhost:3000",
+  origin: "2.59.248.199",
   credentials: true,
   optionSuccessStatus: 200,
 };
