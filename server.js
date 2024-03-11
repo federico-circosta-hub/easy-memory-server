@@ -23,11 +23,5 @@ mongoose
   });
 
 app.use(express.json());
+app.use(cors());
 app.use("/api", noteRouter);
-
-const corsOrigin = {
-  origin: "2.59.248.199",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOrigin));
