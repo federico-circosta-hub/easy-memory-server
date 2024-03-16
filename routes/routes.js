@@ -21,7 +21,7 @@ scoreRouter.post("/post/score", async (req, res) => {
 //Get all Method
 scoreRouter.get("/get/score", async (req, res) => {
   try {
-    const data = await scoreModel.find();
+    const data = await scoreModel.find().sort({ score: -1 });
     res.json(data);
   } catch (error) {
     res.status(500).json({ message: error.message });
