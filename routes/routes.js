@@ -3,7 +3,6 @@ import scoreModel from "../model/scoreModel.js";
 
 const scoreRouter = Router();
 
-//Post Method
 scoreRouter.post("/post/score", async (req, res) => {
   const data = new scoreModel({
     username: req.body.username,
@@ -18,7 +17,6 @@ scoreRouter.post("/post/score", async (req, res) => {
   }
 });
 
-//Get all Method
 scoreRouter.get("/get/score", async (req, res) => {
   try {
     const data = await scoreModel.find().sort({ score: -1 });
@@ -26,6 +24,10 @@ scoreRouter.get("/get/score", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+});
+
+scoreRouter.get("/wakeUpServer", (req, res) => {
+  res.send("server ready!");
 });
 
 export default scoreRouter;
